@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Niramit');
+
+.phone-book-user {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  font-family: 'Niramit', sans-serif;
+
+  &:nth-of-type(odd) {
+    background: #DAE3FE;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      padding-right: 80px;
+    }
+
+    &__name, &__number {
+      padding-left: 30px;
+    }
+
+    &__name {
+      font-weight: bold;
+    }
+
+    &__number, &__email {
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+// States
+
+.phone-book-user {
+
+  &__item {
+
+    &--status {
+      padding-left: 10px;
+
+      &-online {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: green;
+      }
+
+      &-offline {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: red;
+      }
+    }
+  }
+}
