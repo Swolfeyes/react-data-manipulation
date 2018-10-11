@@ -1,0 +1,119 @@
+@import '../variables.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Niramit');
+
+
+.user-card {
+  box-shadow: 1px 1px 5px 1px #ddd;
+  font-family: 'Niramit', sans-serif;
+  padding-top: 20px;
+  max-width: 248px;
+
+  &__header {
+    width: 100%;
+    padding-left: 22px;
+
+    &__image {
+      float: left;
+      width: 100px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &__name {
+      position: relative;
+      float: left;
+      width: 126px;
+      height: 100px;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      background: $greenColor;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__icons {
+      clear: both;
+      display: flex;
+      padding: 35px 0;
+      border-bottom: $border;
+
+      &__icon {
+        cursor: pointer;
+
+        svg {
+          fill: $greenColor;
+          width: 20px;
+          height: 20px;
+        }
+
+        &:not(:first-of-type) {
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding-left: 22px;
+
+    &__section {
+      padding: 20px 0;
+
+      &:not(:last-of-type) {
+        border-bottom: $border;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        &__text {
+          padding-left: 10px;
+
+          span {
+            display: block;
+            font-size: 12px;
+
+            &:last-of-type {
+              color: $greyColor;
+            }
+          }
+        }
+      }
+
+      &__title {
+        span {
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+
+      &__users {
+        display: flex;
+        padding-top: 10px;
+
+        &__item {
+          line-height: 10px;
+          padding-right: 20px;
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+
+  }
+}

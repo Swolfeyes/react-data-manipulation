@@ -1,5 +1,34 @@
-.phone-book {
-  display: table;
+.app {
+  display: flex;
   margin: 50px auto;
-  box-shadow: 1px 1px 5px 1px #ddd;
+  justify-content: space-around;
+
+  &__phone-book {
+    position: relative;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    width: 245px;
+    height: 563px;
+
+    &__search-box {
+      width: 100%;
+      padding: 15px;
+    }
+
+    &__users {
+      max-height: 420px;
+      cursor: pointer;
+      overflow: auto;
+    }
+
+    &__footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__user-card {
+    float: left;
+  }
 }

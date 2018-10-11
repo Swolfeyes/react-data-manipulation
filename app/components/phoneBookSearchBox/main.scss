@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.search-box {
+  display: flex;
+  width: 100%;
+  border: $border;
+  border-radius: 30px;
+  padding: 10px;
+
+  &__input {
+    flex: 1 1 auto;
+
+    input {
+      width: 100%;
+      outline: none;
+    }
+  }
+
+  &__icon {
+    svg {
+      fill: $greyColor;
+    }
+  }
+}

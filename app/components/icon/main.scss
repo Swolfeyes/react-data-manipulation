@@ -1,0 +1,19 @@
+.icon {
+
+  svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// State
+
+.icon {
+
+  &--active {
+    svg {
+      fill: red;
+    }
+  }
+}
