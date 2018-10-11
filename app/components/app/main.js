@@ -15,6 +15,7 @@ class PhoneBook extends React.Component {
     super(props);
 
     this.state = {
+      users: data,
       isUserCardVisible: false,
       currentCardIndex: undefined,
       searchBoxValue: '',
@@ -26,34 +27,39 @@ class PhoneBook extends React.Component {
 
   getActiveCard(currentCardIndex) {
     this.setState({
+      users: data,
       isUserCardVisible: true,
       currentCardIndex,
     });
   }
 
   handleInputChange(value) {
+
+    const filteredUsers = data.filter((item) => item.name.includes(value));
+
     this.setState({
+      users: filteredUsers,
       searchBoxValue: value,
     });
   }
 
   getActiveCardByNameSearch(value) {
 
-    const currentIndex = data.findIndex((item) => item.name === value);
+    const { users } = this.state;
+
+    const filteredUsers = data.filter((item) => item.name.includes(value));
 
     this.setState({
+      users: filteredUsers,
       searchBoxValue: value,
-      currentCardName: value,
-      currentCardIndex: currentIndex,
-      isUserCardVisible: true,
     });
   }
 
   render() {
 
-    const { isUserCardVisible, currentCardIndex, searchBoxValue } = this.state;
+    const { isUserCardVisible, currentCardIndex, searchBoxValue, users } = this.state;
 
-    const phoneBook = data.map((item, index) => {
+    const phoneBook = users.map((item, index) => {
       return (
         <PhoneBookUser
           key={index}
@@ -67,7 +73,7 @@ class PhoneBook extends React.Component {
       )
     });
 
-    const phoneBookCard = data.map((item, index) => {
+    const phoneBookCard = users.map((item, index) => {
       return (
         <UserCard
           key={index}
